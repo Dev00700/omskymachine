@@ -51,4 +51,13 @@ CodeCoverage/
 # NUnit
 *.VisualState.xml
 TestResult.xml
-nunit-*.xml
+nunit-*.	
+
+# Visual Studio
+.vs/
+
+# Copilot
+**/CopilotIndices/
+**/*.db
+**/*.db-shm
+**/*.db-wal
