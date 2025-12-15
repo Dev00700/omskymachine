@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+
+
+
+
+<div class="col-lg-9" style="background:#fff;padding:2%">
+    <div class="contact-form">
+        <h4  style="margin-bottom:2%">Add Product</h4>
+        <div class="col-sm-6">
+            <div class="form-input-group">
+                <label>Product Name</label>
+                <input class="form-control" type="text" placeholder="Your Name">
+                
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-input-group">
+                <label>Short Description</label>
+                <input class="form-control" type="text" placeholder="Your Email">
+            </div>
+        </div>
+       
+        <div class="col-sm-12">
+            <div class="form-input-group">
+                <input type="text" class="form-control" placeholder="Your Message" id="editor1" />
+                <i class="icofont-paragraph"></i>
+            </div>
+        </div>
+        <button type="submit" class="form-btn-group">
+            <i class="fas fa-envelope"></i>
+            <span>send message</span>
+        </button>
+    </div>
+</div>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace("editor1");
+</script>
