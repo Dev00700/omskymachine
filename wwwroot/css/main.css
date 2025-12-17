@@ -3687,8 +3687,8 @@ tbody tr {
     }
 
     .contact-card p {
-        width: 250px;
-        font-size: 18px;
+       /* width: 250px;
+        font-size: 18px;*/
         line-height: 30px;
         margin: 0 auto;
         transition: all linear .3s;
@@ -6038,6 +6038,7 @@ tbody tr {
 ======================================*/
 .footer-part {
     padding-top: 95px;
+    background-color:white;
 }
 
 .footer-widget {
@@ -6814,8 +6815,30 @@ tbody tr {
     position: relative;
     z-index: 1;
 }
-
+    
     .single-banner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: -1;
+    }
+
+
+@media (max-width: 768px) {
+    .single-banner {
+        padding: 60px 15px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .single-banner {
+        padding: 45px 12px;
+    }
+}
+
+    /*.single-banner::before {
         position: absolute;
         content: "";
         top: 0px;
@@ -6825,7 +6848,7 @@ tbody tr {
         background: -webkit-gradient(linear, right top, left top, from(rgba(6, 23, 56, 0.6)), to(rgba(17, 151, 68, 0.6)));
         background: linear-gradient(to left, rgba(6, 23, 56, 0.6), rgba(17, 151, 68, 0.6));
         z-index: -1;
-    }
+    }*/
 
     .single-banner h2 {
         font-size: 38px;
@@ -6990,3 +7013,52 @@ tbody tr {
         margin-bottom: 30px;
     }
 }
+
+
+/*About us page*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+.aboutimg1 {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .aboutimg1 {
+        height: 260px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .aboutimg1 {
+        height: 200px;
+    }
+}
+
+.vm-img {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .vm-img {
+        max-width: 180px;
+    }
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*END*/
+
