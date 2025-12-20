@@ -3,6 +3,7 @@ using MachineWeb.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using System.Xml.Linq;
 
 namespace MachineWeb.DAL
 {
@@ -25,6 +26,9 @@ namespace MachineWeb.DAL
         {
             try
             {
+                var paramLog = GetDynamicParametersLog(param);
+                Console.WriteLine($"SP: {procName}\nParameters:\n{paramLog}\nError: ");
+
                 using (SqlConnection objConnection = new SqlConnection(connection()))
                 {
                     await objConnection.OpenAsync();

@@ -1,0 +1,105 @@
+﻿@model IEnumerable<MachineWeb.Models.ProductResponseDto>
+@{
+    Layout = "_AdminLayout";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Product</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Product</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="btn btn-success float-right" href="/CreateProduct"> Create new Product</a>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>S.No.</th>
+                                        <th>Category </th>
+                                        <th>Product Name</th>
+                                        <th>Is Show On Web</th>
+                                        <th>Image</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null && Model.Count() > 0)
+                                    {
+                                        int i = 0;
+                                        foreach (var item in Model)
+                                        {
+                                            i++;
+                                            <tr>
+                                                <td>@i</td>
+                                                <td>@item.CategoryName</td>
+                                                <td>@item.ProductName</td>
+                                                @if (item.IsShowOnWeb == true)
+                                                {
+                                                    <td><span class="badge badge-success">YES</span></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><span class="badge badge-danger">NO</span></td>
+                                                }
+                                                @if (string.IsNullOrEmpty(item.ProductImage))
+                                                {
+                                                    <td></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><img src="@item.ProductImage" height="100" /></td>
+                                                }
+                                                @if (item.IsActive == true)
+                                                {
+                                                    <td><span class="badge badge-success">Active</span></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><span class="badge badge-danger">InActive</span></td>
+                                                }
+                                                <td>
+                                                    <a href="/CreateProduct?Id=@item.ProductGuid">
+                                                        <div class="tools">
+                                                            <i class="fas fa-edit"></i>
+                                                            <i class="fas fa-trash-o"></i>
+                                                        </div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+</div>

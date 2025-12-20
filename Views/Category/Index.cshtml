@@ -1,0 +1,96 @@
+﻿@model IEnumerable<MachineWeb.Models.CategoryResponseDto>
+@{
+    Layout = "_AdminLayout";
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Category</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Category</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                            <a class="btn btn-success float-right" href="/CreateCategory"> Create new Category</a>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>S.No.</th>
+                                    <th>Category Name</th>
+                                    <th>Image</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    @if (Model != null && Model.Count() > 0)
+                                    {
+                                        int i = 0;
+                                        foreach (var item in Model)
+                                        {
+                                            i++;
+                                            <tr>
+                                                <td>@i</td>
+                                                <td>@item.CategoryName</td>
+                                                @if (string.IsNullOrEmpty(item.CategoryImage))
+                                                {
+                                                    <td></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><img src="@item.CategoryImage" height="100" /></td>
+                                                }
+                                                @if (item.IsActive == true)
+                                                {
+                                                    <td><span class="badge badge-success">Active</span></td>
+                                                }
+                                                else
+                                                {
+                                                    <td><span class="badge badge-danger">InActive</span></td>
+                                                }
+                                                <td>
+                                                    <a href="/CreateCategory?Id=@item.CategoryGuid">
+                                                    <div class="tools">
+                                                        <i class="fas fa-edit"></i>
+                                                        <i class="fas fa-trash-o"></i>
+                                                    </div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                            </tbody>
+                           
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+              
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+</div>

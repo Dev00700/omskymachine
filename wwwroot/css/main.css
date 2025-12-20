@@ -47,11 +47,25 @@
     --primary-tshadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
 }
 
+
+
+
 * {
     margin: 0px;
     padding: 0px;
     outline: 0px;
 }
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 
 img {
     vertical-align: middle;
@@ -6990,3 +7004,5 @@ tbody tr {
         margin-bottom: 30px;
     }
 }
+
+

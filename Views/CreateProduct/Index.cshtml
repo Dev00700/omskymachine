@@ -1,0 +1,183 @@
+﻿@model MachineWeb.Models.ProductResponseDto
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Add Product</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Product Add</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">General</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="txtprdname">Category</label>
+                                <select class="form-control" id="ddlcategory">
+                                    @foreach (var item in ViewBag.Category)
+                                    {
+                                        if (item.Value == Model.CategoryId)
+                                        {
+                                            <option value="@item.Value" selected>
+                                                @item.Text
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Value">
+                                                @item.Text
+                                            </option>
+                                        }
+                                    }
+                                </select>
+
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtprdname">Product Name</label>
+                                <input type="text" id="txtprdname" class="form-control" value="@Model.ProductName">
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="txtprddesc">Description</label>
+                            <textarea id="txtprddesc"
+                                      name="Description"
+                                      class="form-control">@Model.Description</textarea>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label for="txtfile">Product Image</label>
+                            <input type="file" id="txtfile" class="form-control" multiple />
+                        </div>
+
+                        @if (Model.ProductId == 0)
+                        {
+                            <div class="form-group">
+                                <label for="chkisactive">Active</label>
+                                <div class="icheck-primary d-inline">
+                                    <input type="checkbox" id="chkisactive" checked disabled />
+
+                                </div>
+                            </div>
+                        }
+                        else if (Model.ProductId > 0)
+                        {
+
+                            <div class="form-group">
+                                <label for="chkisactive">Active</label>
+                                <div class="icheck-primary d-inline">
+                                    @if (Model.IsActive)
+                                    {
+                                        <input type="checkbox" id="chkisactive" checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" id="chkisactive" />
+                                    }
+
+                                </div>
+                            </div>
+
+                        }
+
+                        <div class="form-group">
+                            <label for="IsShowOnWeb">IsShowOnWeb</label>
+                            <div class="icheck-primary d-inline">
+                                @if (Model.IsShowOnWeb)
+                                {
+                                    <input type="checkbox" id="chkIsShowOnWeb" checked />
+                                }
+                                else
+                                {
+                                    <input type="checkbox" id="chkIsShowOnWeb" />
+                                }
+
+                            </div>
+                        </div>
+
+
+                        @if (Model.productImageDtos != null)
+                        {
+                           <table class="table-responsive table-bordered">
+                               <thead> 
+                               <tr> 
+                               <td>S.No.</td>
+                               <td>Image</td>
+                               <td>Action</td>
+                               </tr>
+                               </thead>
+                               <tbody>
+                                    @foreach(var items in Model.productImageDtos)
+                                    {
+                                        int num = 0;
+                                        num++;
+                                        <tr>
+                                            <td>@num</td>
+                                            <td><img src="@items.Image" style="height:100px"/></td>
+                                            <td>
+                                                <div class="tools">
+                                                    <a onclick="deleteimage('@items.ProductImageGuid')">  <i class="fas fa-edit"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                               </tbody>
+                              
+                           </table>
+                        }
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="/Product" class="btn btn-secondary">Cancel</a>
+                @if (Model.ProductId > 0)
+                {
+                    <input type="hidden" id="txthiddenguid" value="@Model.ProductGuid" />
+                    <input type="submit" value="Update" class="btn btn-success" onclick="AddProduct()">
+                }
+                else
+                {
+                    <input type="submit" value="Submit" class="btn btn-success" onclick="AddProduct()">
+                }
+            </div>
+
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace("txtprddesc");
+</script>
+<script src="~/js/product.js?var= @DateTime.Now"></script>

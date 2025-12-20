@@ -7,6 +7,10 @@ namespace MachineWeb
         public static void AddApplicationService(this IServiceCollection services)
         {
             services.AddTransient<UserLoginService>();
+            services.AddTransient<CategoryService>();
+            services.AddTransient<FileUploadService>();
+            services.AddTransient<ProductService>();
+            services.AddTransient<DropDownService>();
         }
     }
 }

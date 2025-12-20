@@ -1,186 +1,121 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--=====================================
-                META TAG PART START
-    =======================================-->
-    <!-- REQUIRE META -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OMSkyMachine</title>
 
-    <!-- TEMPLATE META -->
-    <!-- WEBPAGE TITLE -->
-    <title>Index Home - </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 
-    <!--=====================================
-                CSS LINK PART START
-    =======================================-->
-    <!-- FAVICON -->
-    <link rel="icon" href="~/images/favicon.png">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- FONTS -->
-    <link rel="stylesheet" href="~/fonts/flaticon/flaticon.css">
-    <link rel="stylesheet" href="~/fonts/icofont/icofont.min.css">
-    <link rel="stylesheet" href="~/fonts/fontawesome/fontawesome.min.css">
-
-    <!-- VENDOR -->
-    <link rel="stylesheet" href="~/vendor/venobox/venobox.min.css">
-    <link rel="stylesheet" href="~/vendor/slickslider/slick.min.css">
-    <link rel="stylesheet" href="~/vendor/niceselect/nice-select.min.css">
-    <link rel="stylesheet" href="~/vendor/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="css/about.css">
-
-    <!-- CUSTOM -->
-    <link rel="stylesheet" href="~/css/main.css">
-    <link rel="stylesheet" href="css/home-standard.css">
-    <!--=====================================
-                CSS LINK PART END
-    =======================================-->
+    <link href="~/dist/css/ionicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dist/css/adminlte.min2167.css?v=3.2.0">
 </head>
-<body>
+<body class="control-sidebar-slide-open sidebar-mini layout-navbar-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
 
-    <div class="backdrop"></div>
-    <a class="backtop fas fa-arrow-up" href="#"></a>
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+               
 
+          
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+              
+            </ul>
+        </nav>
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a class="brand-link">
+                <img src="images/logo.png" alt="omskymachine" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">OMSkyMachine</span>
+            </a>
 
-
-    <header class="header-part">
-        <div class="container">
-            <div class="header-content">
-                <div class="header-media-group">
-                    <button class="header-user"><img src="images/user.png" alt="user"></button>
-                    <a href='index.html'><img src="images/logo.png" alt="logo"></a>
-                    <button class="header-src"><i class="fas fa-search"></i></button>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Admin</a>
+                    </div>
                 </div>
 
-                <a class='header-logo' href='index.html'>
-                    <img src="images/logo.png" alt="logo">
-                </a>
-                <a class='header-widget' href='login.html' title='My Account'>
-                    <img src="images/user.png" alt="user">
-                    <span>join</span>
-                </a>
+               
 
-                <form class="header-form">
-                    <input type="text" placeholder="Search anything...">
-                    <button><i class="fas fa-search"></i></button>
-                </form>
-
-                <div class="header-widget-group">
-                    <a class='header-widget' href='compare.html' title='Compare List'>
-                        <i class="fas fa-random"></i>
-                        <sup>0</sup>
-                    </a>
-                    <a class='header-widget' href='wishlist.html' title='Wishlist'>
-                        <i class="fas fa-heart"></i>
-                        <sup>0</sup>
-                    </a>
-                    <button class="header-widget header-cart" title="Cartlist">
-                        <i class="fas fa-shopping-basket"></i>
-                        <sup>9+</sup>
-                        <span>total price<small>$345.00</small></span>
-                    </button>
-                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item menu-open">
+                            <a href="/Dashboard" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Category" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Category
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Product" class="nav-link">
+                                <i class="nav-icon fas fa-book"></i>
+                                <p>
+                                    Product
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-    </header>
-    <!--=====================================
-                HEADER PART END
-    =======================================-->
-    <!--=====================================
-                NAVBAR PART START
-    =======================================-->
-     
+        </aside>
 
 
-    <div class="mobile-menu">
-        <a href='index.html' title='Home Page'>
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        <button class="cate-btn" title="Category List">
-            <i class="fas fa-list"></i>
-            <span>category</span>
-        </button>
-        <button class="cart-btn" title="Cartlist">
-            <i class="fas fa-shopping-basket"></i>
-            <span>cartlist</span>
-            <sup>9+</sup>
-        </button>
-        <a href='wishlist.html' title='Wishlist'>
-            <i class="fas fa-heart"></i>
-            <span>wishlist</span>
-            <sup>0</sup>
-        </a>
-        <a href='compare.html' title='Compare List'>
-            <i class="fas fa-random"></i>
-            <span>compare</span>
-            <sup>0</sup>
-        </a>
+
+     @RenderBody()
+        <!-- /.content-wrapper -->
+        <!-- /.control-sidebar -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2025 <a href="">OmSkyMachine</a>.</strong>
+            All rights reserved.
+        </footer>
     </div>
 
 
-
-         <section class="banner-part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="banner-category">
-                            
-                            <ul class="banner-category-list">
-                                <li class="banner-category-item">
-                                    <a href="#">
-                                        <i class="flaticon-vegetable"></i>
-                                        <span>Add Product</span>
-                                    </a>
-                                   
-                                </li>
-                               
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        @RenderBody()
-                    </div>
-                </div>
-            </div>
-        </section>
+    
+    <!-- ./wrapper -->
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte2167.js?v=3.2.0"></script>
 
 
-       
-
-    <footer class="footer-part">
-        <div class="container">
-         
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-bottom">
-                        <p class="footer-copytext">&copy;  All Copyrights Reserved by <a target="_blank" href="https://themeforest.net/user/Omskymachine">Omskymachine</a></p>
-                        <div class="footer-card">
-                            <a href="#"><img src="images/payment/jpg/01.jpg" alt="payment"></a>
-                            <a href="#"><img src="images/payment/jpg/02.jpg" alt="payment"></a>
-                            <a href="#"><img src="images/payment/jpg/03.jpg" alt="payment"></a>
-                            <a href="#"><img src="images/payment/jpg/04.jpg" alt="payment"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="~/vendor/bootstrap/jquery-1.12.4.min.js"></script>
-    <script src="~/vendor/bootstrap/popper.min.js"></script>
-    <script src="~/vendor/bootstrap/bootstrap.min.js"></script>
-    <script src="~/vendor/countdown/countdown.min.js"></script>
-    <script src="~/vendor/niceselect/nice-select.min.js"></script>
-    <script src="~/vendor/slickslider/slick.min.js"></script>
-    <script src="~/vendor/venobox/venobox.min.js"></script>
-
-    <!-- CUSTOM -->
-    <script src="~/js/nice-select.js"></script>
-    <script src="~/js/countdown.js"></script>
-    <script src="~/js/accordion.js"></script>
-    <script src="~/js/venobox.js"></script>
-    <script src="~/js/slick.js"></script>
-    <script src="~/js/main.js"></script>
+    <script src="dist/js/pages/dashboard3.js"></script>
 </body>
+
 </html>
