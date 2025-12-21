@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MachineWeb.Models.HomeDto
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -115,240 +116,37 @@
             </div>
         </div>
         <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                      
-                        <button class="product-wish wish">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/01.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+
+            @if(Model != null)
+            {
+                if(Model.productDataResponses != null && Model.productDataResponses.Count() > 0)
+                {
+                    foreach (var products in Model.productDataResponses)
+                    {
+                        <div class="col">
+                            <div class="product-card">
+                            <div class="product-media">
+
+                                <button class="product-wish wish">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                                <a class='product-image' href=''>
+                                    <img src="@products.ProductImage" alt="product">
+                                </a>
+                                <div class="product-widget">
+                                    <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="product-name">
+                                    <a href='/ProductDetail?ProductGuid=@products.ProductGuid'>@products.ProductName</a>
+                                </h6>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-content">
-                       
-                        <h6 class="product-name">
-                            <a href=''>Fully Automatic Auger With Bagger Pouch Packing Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34/-</del>
-                        </h6>
-                       
-                     
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                    
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/02.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                       
-                        <h6 class="product-name">
-                            <a href=''>Single Head BWFS03 Bag Weighing Filling System</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 340000</del>
-                        </h6>
-                     
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                        
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/03.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        
-                        <h6 class="product-name">
-                            <a href=''>Auger Filler Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 80000</del>
-                        </h6>
-                     
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                      
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/04.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                      
-                        <h6 class="product-name">
-                            <a href=''>Automatic Ketchup Filling Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34</del>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                       
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/05.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        
-                        <h6 class="product-name">
-                            <a href=''>Tea Sachet Packing Machine, 1000 Pouch/Hour</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34</del>
-                        </h6>
-                        
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                      
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/06.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                      
-                        <h6 class="product-name">
-                            <a href=''>Xrechnocrat Model Gamma Sachet Packaging Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34</del>
-                        </h6>
-                      
-                      
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/07.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                        <h6 class="product-name">
-                            <a href=''>Automatic Snuff Packing Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34</del>
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                      
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/08.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                       
-                        <h6 class="product-name">
-                            <a href=''>Multi Track Liquid Packing Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs. 34</del>
-                        </h6>
-                      
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                       
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/09.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                     
-                        <h6 class="product-name">
-                            <a href=''>Multi Track Liquid Packing Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs 34</del>
-                        </h6>
-                       
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="product-card">
-                    <div class="product-media">
-                       
-                        <a class='product-image' href=''>
-                            <img src="~/images/product/10.jpg" alt="product">
-                        </a>
-                        <div class="product-widget">
-                            <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                        </div>
-                    </div>
-                    <div class="product-content">
-                      
-                        <h6 class="product-name">
-                            <a href=''>SS Tomato Ketchup Filling Machine</a>
-                        </h6>
-                        <h6 class="product-price">
-                            <del>Rs 34</del>
-                        </h6>
-                      
-                    </div>
-                </div>
-            </div>
+                    }
+                }
+            }
         </div>
         <div class="row">
             <div class="col-lg-12">

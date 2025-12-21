@@ -11,6 +11,7 @@ namespace MachineWeb
             services.AddTransient<FileUploadService>();
             services.AddTransient<ProductService>();
             services.AddTransient<DropDownService>();
+            services.AddTransient<HomeService>();
         }
     }
 }

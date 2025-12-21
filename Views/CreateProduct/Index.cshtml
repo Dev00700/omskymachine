@@ -178,6 +178,8 @@
 </div>
 <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace("txtprddesc");
+        CKEDITOR.replace('txtprddesc', {
+        allowedContent: true
+    });
 </script>
 <script src="~/js/product.js?var= @DateTime.Now"></script>

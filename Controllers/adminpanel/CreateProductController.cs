@@ -76,7 +76,7 @@ namespace MachineWeb.Controllers.adminpanel
 
             DataTable imageTable = _fileuploadservice.ConvertImageListToDataTable(_imagelist);
             var res= new CommonResponseDto<_productresdto>();
-            if (productRequestDto.ProductGuid != null)
+            if (productRequestDto.ProductGuid != null && productRequestDto.ProductGuid != "null")
             {
                 CommonRequestDto<ProductRequestDto> requestDto = new CommonRequestDto<ProductRequestDto>
                 {

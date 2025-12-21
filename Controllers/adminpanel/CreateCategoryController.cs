@@ -49,7 +49,7 @@ namespace MachineWeb.Controllers.adminpanel
                 _imagename = imageNames.FirstOrDefault() ?? "";
             }
 
-            if (categoryRequestDto.CategoryGuid != null)
+            if (categoryRequestDto.CategoryGuid != null && categoryRequestDto.CategoryGuid != "null")
             {
                 CommonRequestDto<CategoryRequestDto> requestDto = new CommonRequestDto<CategoryRequestDto>
                 {

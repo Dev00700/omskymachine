@@ -1,21 +1,43 @@
-using System.Diagnostics;
+using MachineWeb.BAL;
 using MachineWeb.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace MachineWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly HomeService homeService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(HomeService ahomeService)
         {
-            _logger = logger;
+            this.homeService = ahomeService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var homeresponse = new HomeDto();
+            CommonRequestDto<HomeRequestDto> _productrequestDto = new CommonRequestDto<HomeRequestDto>
+            {
+                CompanyId = 1,
+                UserId = 1,
+                PageSize = 1,
+                PageRecordCount = 10,
+                Data = new HomeRequestDto
+                {
+                    ProcId = 1
+                }
+            };
+
+            var res = await homeService.GetHomeData(_productrequestDto);
+
+            if (res.Data.Count() > 0)
+            {
+                res.Data.Where(x => !string.IsNullOrEmpty(x.ProductImage)).ToList().ForEach(x => x.ProductImage = "webimages/" + x.ProductImage);
+                homeresponse.productDataResponses = res.Data;
+                return View(homeresponse);
+            }
+            return View(new HomeDto());
         }
 
         public IActionResult Privacy()
@@ -23,11 +45,7 @@ namespace MachineWeb.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+         
         public IActionResult Contact()
         {
             return View();
@@ -36,5 +54,7 @@ namespace MachineWeb.Controllers
         {
             return View();
         }
+
+
     }
 }

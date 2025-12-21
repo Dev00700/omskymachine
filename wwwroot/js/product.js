@@ -20,7 +20,7 @@
     let isActive = $("#chkisactive").is(":checked");
     let isshowonweb = $("#chkIsShowOnWeb").is(":checked");
 
-    let productguid = $("#txthiddenguid").val();
+    let productguid = $("#txthiddenguid").val() ?? null;
 
     var formData = new FormData();
 

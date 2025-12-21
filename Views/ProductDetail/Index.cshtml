@@ -1,0 +1,76 @@
+﻿@model MachineWeb.Models.ProductResponseDto
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="css/product-details.css">
+
+
+
+
+<!--=====================================
+                    BANNER PART START
+        =======================================-->
+<section class="single-banner inner-section" style="background: url(images/single-banner.jpg) no-repeat center;">
+    <div class="container">
+        <h2>product simple</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href='index.html'>Home</a></li>
+            <li class="breadcrumb-item"><a href='shop-4column.html'>shop-4column</a></li>
+            <li class="breadcrumb-item active" aria-current="page">product-simple</li>
+        </ol>
+    </div>
+</section>
+<!--=====================================
+            BANNER PART END
+=======================================-->
+<!--=====================================
+        PRODUCT DETAILS PART START
+=======================================-->
+<section class="inner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                @if (Model != null)
+                {
+                    @if (Model.productImageDtos != null)
+                    {
+                        <div class="details-gallery">
+                            <ul class="details-preview">
+                                @foreach (var images in Model.productImageDtos)
+                                {
+                                    <li><img src="@images.Image" alt="product"></li>
+                                }
+                            </ul>
+                            <ul class="details-thumb">
+                                @foreach (var images in Model.productImageDtos)
+                                {
+                                    <li><img src="@images.Image" alt="product"></li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="col-lg-6">
+                <div class="details-content">
+                    <h3 class="details-name"><a href="#">@Model.ProductName</a></h3>
+                    <p class="details-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit facere harum natus amet soluta fuga consectetur alias veritatis quisquam ab eligendi itaque eos maiores quibusdam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--=====================================
+        PRODUCT DETAILS PART END
+=======================================-->
+<!--=====================================
+          PRODUCT TAB PART START
+=======================================-->
+<section class="inner-section">
+    <div class="container">
+        @Html.Raw(Model.Description)
+    </div>
+</section>
+<!--=====================================
+            PRODUCT TAB PART END
+=======================================-->

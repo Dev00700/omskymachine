@@ -12,7 +12,7 @@
     var formData = new FormData();
 
     formData.append("CategoryName", categoryname);
-    formData.append("CategoryGuid", categoryguid);
+    formData.append("CategoryGuid", categoryguid ?? null);
     formData.append("IsActive", isActive);
 
     var files = document.getElementById("txtfile").files;
