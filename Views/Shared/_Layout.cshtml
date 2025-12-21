@@ -73,8 +73,16 @@
                                         <li class="navbar-item">
                                             <a class="navbar-link" href=@Url.Action("AboutUs", "Home")>About Us</a>
                                         </li>
+
+                                        <li class="navbar-item dropdown">
+                                            <a class="navbar-link dropdown-arrow" href="#">Our Product</a>
+
+                                            @await Component.InvokeAsync("MainCategory")
+                                        </li>
+
+
                                         <li class="navbar-item">
-                                            <a class="navbar-link" href="#">Our Product</a>
+                                            <a class="navbar-link" href="#"></a>
                                         </li>
                                         <li class="navbar-item">
                                             <a class="navbar-link" href="#">Blog</a>

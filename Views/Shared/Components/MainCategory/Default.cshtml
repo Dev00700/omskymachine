@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MachineWeb.Models.CategoryDataResponse>
+
+<ul class=" dropdown-position-list">
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="/ProductList?CategoryGuid=@item.CategoryGuid">
+                @item.CategoryName
+            </a>
+        </li>
+    }
+</ul>

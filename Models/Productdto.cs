@@ -13,6 +13,7 @@ namespace MachineWeb.Models
         public string ProductGuid { get; set; }
         [AllowHtml]
         public string Description { get; set; }
+        public string ShortDescription { get; set; }
         public bool IsShowOnWeb { get; set; }
     }
 
@@ -26,6 +27,7 @@ namespace MachineWeb.Models
         public string ProductName { get; set; }
 
         public string Description { get; set; }
+        public string ShortDescription { get; set; }
         public string ProductImage { get; set; }
         public string ImageUrl { get; set; }
         public bool IsShowOnWeb { get; set; }

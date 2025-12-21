@@ -10,14 +10,9 @@
 <!--=====================================
                     BANNER PART START
         =======================================-->
-<section class="single-banner inner-section" style="background: url(images/single-banner.jpg) no-repeat center;">
+<section class="single-banner inner-section" style="background: url(/images/img15.png) no-repeat center;">
     <div class="container">
-        <h2>product simple</h2>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href='index.html'>Home</a></li>
-            <li class="breadcrumb-item"><a href='shop-4column.html'>shop-4column</a></li>
-            <li class="breadcrumb-item active" aria-current="page">product-simple</li>
-        </ol>
+        @* <h2>product simple</h2> *@
     </div>
 </section>
 <!--=====================================
@@ -54,7 +49,12 @@
             <div class="col-lg-6">
                 <div class="details-content">
                     <h3 class="details-name"><a href="#">@Model.ProductName</a></h3>
-                    <p class="details-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit facere harum natus amet soluta fuga consectetur alias veritatis quisquam ab eligendi itaque eos maiores quibusdam.</p>
+                    <p class="details-desc">@Model.ShortDescription</p>
+                    <div class="details-add-group">
+                        <a class="product-add" title="Send Enquiry" href="/Home/Contact">
+                                    <span>Send Enquiry</span>
+                                </a>
+                    </div>
                 </div>
             </div>
         </div>

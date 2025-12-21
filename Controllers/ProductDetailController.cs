@@ -18,7 +18,7 @@ namespace MachineWeb.Controllers
                 CompanyId = 1,
                 UserId = 1,
                 PageSize = 1,
-                PageRecordCount = 10,
+                PageRecordCount = 100,
                 Data = new ProductRequestDto
                 {
                     ProductGuid = ProductGuid

@@ -88,6 +88,7 @@ namespace MachineWeb.Controllers.adminpanel
                         CategoryId = productRequestDto.CategoryId,
                         ProductName = productRequestDto.ProductName,
                         Description = productRequestDto.Description,
+                        ShortDescription = productRequestDto.ShortDescription,
                         Image = _imagename,
                         IsActive = productRequestDto.IsActive,
                         IsShowOnWeb = productRequestDto.IsShowOnWeb
@@ -106,6 +107,7 @@ namespace MachineWeb.Controllers.adminpanel
                         CategoryId = productRequestDto.CategoryId,
                         ProductName = productRequestDto.ProductName,
                         Description = productRequestDto.Description,
+                        ShortDescription = productRequestDto.ShortDescription,
                         Image = _imagename,
                         IsActive = productRequestDto.IsActive,
                         IsShowOnWeb = productRequestDto.IsShowOnWeb

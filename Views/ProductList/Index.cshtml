@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MachineWeb.Models.CategoryWiseProductDataResponse>
+@{
+    Layout = "_Layout";
+}
+<section class="inner-section single-banner" style="background: url(/images/img15.png) no-repeat center;">
+    <div class="container">
+        <h2>@Model.Select(x => x.CategoryName).FirstOrDefault()</h2>
+    </div>
+</section>
+
+
+<section class="inner-section shop-part">
+    <div class="container">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-5">
+            @if(Model != null)
+            {
+                if(Model.Count() > 0)
+                {
+                    foreach(var items in Model)
+                    {
+                        <div class="col">
+                            <div class="product-card">
+                                <div class="product-media">
+
+
+                                    <a class='product-image' href='/ProductDetail?ProductGuid=@items.ProductGuid'>
+                                        <img src="@items.ProductImage" alt="product">
+                                    </a>
+                                   @*  <div class="product-widget">
+                                        <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
+                                    </div> *@
+                                </div>
+                                <div class="product-content">
+                                    <h6 class="product-name">
+                                        <a href='/ProductDetail?ProductGuid=@items.ProductGuid'>@items.ProductName</a>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                     
+            }
+
+          
+        </div>
+      @*   <div class="row">
+            <div class="col-lg-12">
+                <div class="bottom-paginate">
+                    <p class="page-info">Showing 12 of 60 Results</p>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-long-arrow-alt-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">...</li>
+                        <li class="page-item"><a class="page-link" href="#">60</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> *@
+    </div>
+</section>

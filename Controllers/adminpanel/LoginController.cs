@@ -39,5 +39,11 @@ namespace MachineWeb.Controllers.adminpanel
 
             return Json(new { success = false, message = "Something went wrong" });
         }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

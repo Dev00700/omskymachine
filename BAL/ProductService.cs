@@ -26,6 +26,7 @@ namespace MachineWeb.BAL
             queryparameter.Add("@CategoryId", data.CategoryId);
             queryparameter.Add("@ProductName", data.ProductName);
             queryparameter.Add("@Description", data.Description);
+            queryparameter.Add("@ShortDescription", data.ShortDescription);
             queryparameter.Add("@IsActive", data.IsActive);
             queryparameter.Add("@DelMark", data.DelMark);
             queryparameter.Add("@Remarks", data.Remarks);
@@ -57,6 +58,7 @@ namespace MachineWeb.BAL
             queryparameter.Add("@CategoryId", data.CategoryId);
             queryparameter.Add("@ProductName", data.ProductName);
             queryparameter.Add("@Description", data.Description);
+            queryparameter.Add("@ShortDescription", data.ShortDescription);
             queryparameter.Add("@IsActive", data.IsActive);
             queryparameter.Add("@DelMark", data.DelMark);
             queryparameter.Add("@Remarks", data.Remarks);

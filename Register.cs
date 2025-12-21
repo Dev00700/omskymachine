@@ -12,6 +12,7 @@ namespace MachineWeb
             services.AddTransient<ProductService>();
             services.AddTransient<DropDownService>();
             services.AddTransient<HomeService>();
+            services.AddTransient<EnquiryService>();
         }
     }
 }

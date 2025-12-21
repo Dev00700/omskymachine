@@ -586,7 +586,7 @@ button {
     top: 100px;
     left: 0px;
     z-index: 2;
-    width: 200px;
+    width: auto;
     height: auto;
     visibility: hidden;
     opacity: 0;
@@ -2863,6 +2863,7 @@ tbody tr {
 .category-media {
     position: relative;
     margin-bottom: 15px;
+    padding: 5%;
 }
 
     .category-media img {
@@ -3701,7 +3702,7 @@ tbody tr {
     }
 
     .contact-card p {
-       /* width: 250px;
+        /* width: 250px;
         font-size: 18px;*/
         line-height: 30px;
         margin: 0 auto;
@@ -6052,7 +6053,7 @@ tbody tr {
 ======================================*/
 .footer-part {
     padding-top: 95px;
-    background-color:white;
+    background-color: white;
 }
 
 .footer-widget {
@@ -6829,7 +6830,7 @@ tbody tr {
     position: relative;
     z-index: 1;
 }
-    
+
     .single-banner::before {
         content: "";
         position: absolute;
@@ -6852,7 +6853,7 @@ tbody tr {
     }
 }
 
-    /*.single-banner::before {
+/*.single-banner::before {
         position: absolute;
         content: "";
         top: 0px;
@@ -6864,12 +6865,12 @@ tbody tr {
         z-index: -1;
     }*/
 
-    .single-banner h2 {
-        font-size: 38px;
-        margin-bottom: 15px;
-        color: var(--white);
-        text-transform: uppercase;
-    }
+.single-banner h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+}
 
 @media (max-width: 767px) {
     .single-banner {
@@ -7034,6 +7035,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 .aboutimg1 {
     width: 100%;
     max-width: 100%;
@@ -7069,6 +7071,7 @@ img {
         max-width: 180px;
     }
 }
+
 .row {
     margin-left: 0;
     margin-right: 0;

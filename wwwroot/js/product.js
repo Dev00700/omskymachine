@@ -1,5 +1,6 @@
 ﻿function AddProduct() {
     let productname = $("#txtprdname").val();
+    let shortdescription = $("#txtprdshortdesc").val();
     let categoryId = $("#ddlcategory").val();
     let productdesc = CKEDITOR.instances.txtprddesc.getData();
 
@@ -16,6 +17,11 @@
         alert("please enter Description");
         return false;
     }
+    if (shortdescription == null || shortdescription == undefined || shortdescription == "") {
+        alert("please enter short description");
+        return false;
+    }
+   
 
     let isActive = $("#chkisactive").is(":checked");
     let isshowonweb = $("#chkIsShowOnWeb").is(":checked");
@@ -26,6 +32,7 @@
 
     formData.append("CategoryId", categoryId);
     formData.append("ProductName", productname);
+    formData.append("ShortDescription", shortdescription.trim());
     formData.append("Description", productdesc.trim());
     formData.append("ProductGuid", productguid);
     formData.append("IsActive", isActive);

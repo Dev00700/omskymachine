@@ -60,6 +60,16 @@
 
                         </div>
 
+                         <div class="form-group">
+                            <label for="txtprdshortdesc">Short Description</label>
+                            <textarea id="txtprdshortdesc"
+                                      name="ShortDescription"
+                                      class="form-control">@Model.ShortDescription</textarea>
+                        </div>
+
+
+
+
 
                         <div class="form-group">
                             <label for="txtprddesc">Description</label>
@@ -176,7 +186,7 @@
     </section>
     <!-- /.content -->
 </div>
-<script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+<script src="~/ckeditor4-4.22.1/ckeditor.js"></script>
 <script>
         CKEDITOR.replace('txtprddesc', {
         allowedContent: true
