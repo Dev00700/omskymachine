@@ -37,6 +37,7 @@
                 CSS LINK PART END
     =======================================-->
 </head>
+
 <body>
 
     <div class="backdrop"></div>
@@ -49,72 +50,69 @@
     =======================================-->
     <header class="header-part">
         <div class="container">
-            <div class="header-content">
-                <div class="header-media-group">
-                    <button class="header-user"><img src="/images/menu.png" alt="user"></button>
-                    <a href=@Url.Action("Index", "Home")><img src="/images/logo.png" alt="logo"></a>
-                   
+            <div class="header-content header-flex">
+
+                <!-- LEFT : Logo -->
+                <div class="header-left">
+                    <div class="header-media-group">
+                        <button class="header-user">
+                            <img src="/images/menu.png" alt="menu">
+                        </button>
+                    </div>
+
+                    <a class="header-logo" href=@Url.Action("Index", "Home")>
+                        <img src="/images/logo.png" alt="logo">
+                    </a>
                 </div>
 
-                <a class='header-logo' href=@Url.Action("Index", "Home")>
-                    <img src="/images/logo.png" alt="logo">
-                </a>
-
-
+                <!-- CENTER : Menu -->
                 <nav class="navbar-part">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="navbar-content">
-                                    <ul class="navbar-list">
-                                        <li class="navbar-item">
-                                            <a class="navbar-link" href=@Url.Action("Index","Home")>Home</a>
-                                        </li>
-                                        <li class="navbar-item">
-                                            <a class="navbar-link" href=@Url.Action("AboutUs", "Home")>About Us</a>
-                                        </li>
+                    <ul class="navbar-list">
+                        <li class="navbar-item">
+                            <a class="navbar-link" href=@Url.Action("Index", "Home")>Home</a>
+                        </li>
 
-                                        <li class="navbar-item dropdown">
-                                            <a class="navbar-link dropdown-arrow" href="#">Our Product</a>
+                        <li class="navbar-item">
+                            <a class="navbar-link" href=@Url.Action("AboutUs", "Home")>About Us</a>
+                        </li>
 
-                                            @await Component.InvokeAsync("MainCategory")
-                                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link dropdown-arrow" href="javascript:void(0);">
+                                Our Category
+                            </a>
 
+                            @await Component.InvokeAsync("MainCategory")
 
-                                        <li class="navbar-item">
-                                            <a class="navbar-link" href="#"></a>
-                                        </li>
-                                        <li class="navbar-item">
-                                            <a class="navbar-link" href="#">Blog</a>
-                                        </li>
-                                        <li class="navbar-item">
-                                            <a class="navbar-link" href=@Url.Action("Contact","Home")>Contact Us</a>
-                                        </li>
-                                    </ul>
-                                    <div class="navbar-info-group" >
-                                        <div class="navbar-info">
-                                            <i class="icofont-ui-touch-phone"></i>
-                                            <p>
-                                                <small>call us</small>
-                                                <span>(+880) 183 8288 389</span>
-                                            </p>
-                                        </div>
-                                        <div class="navbar-info">
-                                            <i class="icofont-ui-email"></i>
-                                            <p>
-                                                <small>email us</small>
-                                                <span>support@example.com</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            
+                        </li>
+
+                        <li class="navbar-item">
+                            <a class="navbar-link" href="#">Blog</a>
+                        </li>
+
+                        <li class="navbar-item">
+                            <a class="navbar-link" href=@Url.Action("Contact", "Home")>Contact Us</a>
+                        </li>
+                    </ul>
                 </nav>
+
+                <!-- RIGHT : Contact -->
+                <div class="header-right">
+                    <div class="navbar-info">
+                        <i class="icofont-ui-touch-phone"></i>
+                        <span>(+880) 183 8288 389</span>
+                    </div>
+
+                    <div class="navbar-info">
+                        <i class="icofont-ui-email"></i>
+                        <span>support@example.com</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
+
     <!--=====================================
                 HEADER PART END
     =======================================-->
@@ -131,58 +129,101 @@
               NAV SIDEBAR PART START
     =======================================-->
     <aside class="nav-sidebar">
+
+        <!-- Header -->
         <div class="nav-header">
-            <a href="#"><img src="/images/logo.png"></a>
-            <button class="nav-close"><i class="icofont-close"></i></button>
+            <a href="@Url.Action("Index", "Home")" class="nav-logo">
+                <img src="/images/logo.png" alt="logo">
+            </a>
+            <button class="nav-close">
+                <i class="icofont-close"></i>
+            </button>
         </div>
+
+        <!-- Content -->
         <div class="nav-content">
-           
-            <!-- This commentable code show when user login or register -->
-            <!-- <div class="nav-profile">
-                <a class="nav-user" href="#"><img src="images/user.png" alt="user"></a>
-                <h4 class="nav-name"><a href="profile.html">Miron Mahmud</a></h4>
-            </div> -->
-         
+
+            <!-- Menu -->
             <ul class="nav-list">
+
                 <li>
-                    <a class="nav-link " href=@Url.Action("Index", "Home")><i class="icofont-home"></i>Home</a>
+                    <a class="nav-link" href=@Url.Action("Index", "Home")>
+                        <i class="icofont-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a class="nav-link" href=@Url.Action("AboutUs", "Home")>
+                        <i class="icofont-info-circle"></i>
+                        <span>About Us</span>
+                    </a>
+                </li>
+
+               @*  <li class="nav-dropdown">
+                    <a class="nav-link dropdown-arrow" href="#">
+                        <i class="icofont-box"></i>
+                        <span>Our Category</span>
+                    </a>
+
+                    @await Component.InvokeAsync("MainCategory")
+                </li> *@
+
+                <li class="navbar-item dropdown">
+                    <a class="navbar-link dropdown-arrow" href="javascript:void(0);">
+                        Our Category
+                    </a>
+
+                     @await Component.InvokeAsync("MainCategory")
+
                    
                 </li>
 
-                <li><a class='nav-link' href=@Url.Action("AboutUs", "Home")><i class="icofont-info-circle"></i>About us</a></li>
+                <li>
+                    <a class="nav-link" href="#">
+                        <i class="icofont-book-alt"></i>
+                        <span>Blog</span>
+                    </a>
+                </li>
 
                 <li>
-                    <a class="nav-link " href="#"><i class="icofont-page"></i>Our Products</a>
-                   
+                    <a class="nav-link" href=@Url.Action("Contact", "Home")>
+                        <i class="icofont-contacts"></i>
+                        <span>Contact Us</span>
+                    </a>
                 </li>
-             
-                <li>
-                    <a class="nav-link" href="#"><i class="icofont-book-alt"></i>blogs</a>
-                  
-                </li>
-                <li><a class='nav-link' href=@Url.Action("Contact", "Home")><i class="icofont-contacts"></i>contact us</a></li>
+
             </ul>
+
+            <!-- Contact Info -->
             <div class="nav-info-group">
+
                 <div class="nav-info">
                     <i class="icofont-ui-touch-phone"></i>
-                    <p>
-                        <small>call us</small>
+                    <div>
+                        <small>Call Us</small>
                         <span>(+880) 183 8288 389</span>
-                    </p>
+                    </div>
                 </div>
+
                 <div class="nav-info">
                     <i class="icofont-ui-email"></i>
-                    <p>
-                        <small>email us</small>
+                    <div>
+                        <small>Email Us</small>
                         <span>support@example.com</span>
-                    </p>
+                    </div>
                 </div>
+
             </div>
+
+            <!-- Footer -->
             <div class="nav-footer">
-                <p>All Rights Reserved by <a href="#">Omskymachine</a></p>
+                <p>© All Rights Reserved by <a href="#">Omskymachine</a></p>
             </div>
+
         </div>
     </aside>
+
    
     <div class="modal fade" id="product-view">
         <div class="modal-dialog">
@@ -290,6 +331,18 @@
 
     <div>
             @RenderBody()
+        <a href="tel:919876543210"
+           class="call-fixed"
+           aria-label="Call Us">
+            <img src="/images/call.png" alt="Call Now">
+        </a>
+        <a href="https://wa.me/919876543210?text=Hello%20I%20want%20to%20know%20more"
+           class="whatsapp-fixed"
+           target="_blank"
+           aria-label="Chat on WhatsApp">
+            <img src="/images/whatsapp.jfif" alt="WhatsApp Chat">
+        </a>
+       
     </div>
    
     <footer class="footer-part">
@@ -376,12 +429,9 @@
             <div class="row">
                 <div class="col-12">
                     <div class="footer-bottom">
-                        <p class="footer-copytext">&copy;  All Copyrights Reserved by <a target="_blank" href="https://themeforest.net/user/Omskymachine">Omskymachine</a></p>
+                        <p class="footer-copytext">&copy;@DateTime.Now.Year  All Copyrights Reserved by Omskymachine</p>
                         <div class="footer-card">
-                            <a href="#"><img src="/images/payment/jpg/01.jpg" alt="payment"></a>
-                            <a href="#"><img src="/images/payment/jpg/02.jpg" alt="payment"></a>
-                            <a href="#"><img src="/images/payment/jpg/03.jpg" alt="payment"></a>
-                            <a href="#"><img src="/images/payment/jpg/04.jpg" alt="payment"></a>
+                             Design & developed by DIDS
                         </div>
                     </div>
                 </div>
@@ -389,6 +439,9 @@
         </div>
     </footer>
    
+   
+
+
     <script src="~/vendor/bootstrap/jquery-1.12.4.min.js"></script>
     <script src="~/vendor/bootstrap/popper.min.js"></script>
     <script src="~/vendor/bootstrap/bootstrap.min.js"></script>
@@ -404,5 +457,15 @@
     <script src="~/js/venobox.js"></script>
     <script src="~/js/slick.js"></script>
     <script src="~/js/main.js"></script>
+
+    <script>
+        document.querySelector(".header-user").addEventListener("click", function () {
+            document.querySelector(".navbar-part").classList.toggle("active");
+        });
+    </script>
+
+   
+
+
 </body>
 </html>

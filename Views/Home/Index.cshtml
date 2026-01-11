@@ -23,7 +23,7 @@
 </section>
 
 
-<section class="section category-part" style="background:#fff;">
+<section class="section category-part main-category" style="background:#e9f4f0;">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -105,19 +105,14 @@
 <!--=====================================
             COUNTDOWN PART START
 =======================================-->
-<section class="section countdown-part">
+@* <section class="section countdown-part">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mx-auto">
                 <div class="countdown-content">
                     <h3>Vacuum Filler Double Head Machine</h3>
                     <p>The Vacuum Filler Double Head Machine is a high-performance filling solution designed for accurate, hygienic, and efficient filling of liquid and semi-liquid products. Built with food-grade stainless steel, this machine ensures contamination-free operation and long-term durability.</p>
-                   @*  <div class="countdown countdown-clock" data-countdown="2021/12/31">
-                        <span class="countdown-time"><span>00</span><small>days</small></span>
-                        <span class="countdown-time"><span>00</span><small>hours</small></span>
-                        <span class="countdown-time"><span>00</span><small>minutes</small></span>
-                        <span class="countdown-time"><span>00</span><small>seconds</small></span>
-                    </div> *@
+                 
                    
                 </div>
             </div>
@@ -130,7 +125,94 @@
             </div>
         </div>
     </div>
+</section> *@
+
+
+<section class="section countdown-part">
+    <div class="container">
+
+        <div id="machineCarousel" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+                <!-- SLIDE 1 -->
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="countdown-content">
+                                <h3>Vacuum Filler Double Head Machine</h3>
+                                <p>
+                                    High-performance filling solution for liquid and semi-liquid
+                                    products with food-grade stainless steel construction.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="countdown-img">
+                                <img src="~/images/img13.png" class="img-fluid" alt="Machine 1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="countdown-content">
+                                <h3>Automatic Liquid Filling Machine</h3>
+                                <p>
+                                    Fully automatic system designed for speed, precision,
+                                    and hygienic production.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="countdown-img">
+                                <img src="~/images/img14.png" class="img-fluid" alt="Machine 2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="countdown-content">
+                                <h3>Semi Automatic Paste Filling Machine</h3>
+                                <p>
+                                    Ideal for viscous products like sauce, cream and ketchup
+                                    with easy maintenance.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="countdown-img">
+                                <img src="~/images/img15.png" class="img-fluid" alt="Machine 3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LEFT / RIGHT ARROWS -->
+            <button class="carousel-control-prev" type="button"
+                    data-bs-target="#machineCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button"
+                    data-bs-target="#machineCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+    </div>
 </section>
+
 <!--=====================================
             COUNTDOWN PART END
 =======================================-->
@@ -146,7 +228,9 @@
 <!--=====================================
             RECENT PART START
 =======================================-->
-<section class="section recent-part">
+
+
+@* <section class="section recent-part">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -173,9 +257,7 @@
                                 <a class='product-image' href=''>
                                     <img src="@products.ProductImage" alt="product">
                                 </a>
-                               @*  <div class="product-widget">
-                                    <a title="Product View" href="#" class="fas fa-eye" data-bs-toggle="modal" data-bs-target="#product-view"></a>
-                                </div> *@
+                               
                             </div>
                             <div class="product-content">
                                 <h6 class="product-name">
@@ -188,16 +270,55 @@
                 }
             }
         </div>
+      
+    </div>
+</section> *@
+
+
+<section class="section category-part" >
+    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="section-btn-25">
-                    <a class='btn btn-outline' href=''>
-                        <i class="fas fa-eye"></i>
-                        <span>show more</span>
-                    </a>
+            <div class="col-12">
+                <div class="section-heading">
+                    <h2>our Products</h2>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="category-slider slider-arrow">
+                    @if (Model != null)
+                    {
+                        if (Model.productDataResponses != null && Model.productDataResponses.Count() > 0)
+                        {
+                            foreach (var products in Model.productDataResponses)
+                            {
+                                <div class="col">
+                                    <div class="product-card">
+                                        <div class="product-media">
+
+                                            <button class="product-wish wish">
+                                                <i class="fas fa-heart"></i>
+                                            </button>
+                                            <a class='product-image' href=''>
+                                                <img src="@products.ProductImage" alt="product">
+                                            </a>
+                                           
+                                        </div>
+                                        <div class="product-content">
+                                            <h6 class="product-name">
+                                                <a href='/ProductDetail?ProductGuid=@products.ProductGuid'>@products.ProductName</a>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 <!--=====================================
@@ -210,6 +331,13 @@
 =======================================-->
 <div class="section promo-part">
     <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading">
+                    <h2>Most Selling Machine</h2>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-6 px-xl-3">
                 <div class="promo-img">
@@ -239,76 +367,76 @@
                 <div class="brand-media">
                     <img src="~/images/brand/01.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>natural greeny</h4>
-                    <p>(45 items)</p>
+                  
                 </div>
             </div>
             <div class="brand-wrap">
                 <div class="brand-media">
                     <img src="~/images/brand/02.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>vegan lover</h4>
-                    <p>(45 items)</p>
+                  
                 </div>
             </div>
             <div class="brand-wrap">
                 <div class="brand-media">
                     <img src="~/images/brand/03.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>organic foody</h4>
-                    <p>(45 items)</p>
+                 
                 </div>
             </div>
             <div class="brand-wrap">
                 <div class="brand-media">
                     <img src="~/images/brand/04.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>ecomart limited</h4>
-                    <p>(45 items)</p>
+                   
                 </div>
             </div>
             <div class="brand-wrap">
                 <div class="brand-media">
                     <img src="~/images/brand/05.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>fresh fortune</h4>
-                    <p>(45 items)</p>
+                  
                 </div>
             </div>
             <div class="brand-wrap">
                 <div class="brand-media">
                     <img src="~/images/brand/06.jpg" alt="brand">
                     <div class="brand-overlay">
-                        <a href='brand-single.html'><i class="fas fa-link"></i></a>
+                        <a href='#'><i class="fas fa-link"></i></a>
                     </div>
                 </div>
                 <div class="brand-meta">
                     <h4>econature</h4>
-                    <p>(45 items)</p>
+                   
                 </div>
             </div>
         </div>
-        <div class="row">
+        @* <div class="row">
             <div class="col-lg-12">
                 <div class="section-btn-50">
                     <a class='btn btn-outline' href='brand-list.html'>
@@ -317,7 +445,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> *@
     </div>
 </section>
 <!--=====================================
@@ -532,7 +660,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+       @*  <div class="row">
             <div class="col-lg-12">
                 <div class="section-btn-25">
                     <a class='btn btn-outline' href='blog-grid.html'>
@@ -541,6 +669,6 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> *@
     </div>
 </section>
