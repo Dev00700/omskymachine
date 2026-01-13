@@ -75,7 +75,7 @@
 }
 
 .details-thumb .slick-current img {
-  border: 1px solid var(--primary);
+  border: 1px solid #df9e41
 }
 
 .product-navigation {
@@ -106,7 +106,7 @@
 }
 
 .product-navigation li a:hover {
-  color: var(--primary);
+  color: #df9e41
 }
 
 .product-navigation li a:hover .product-nav-popup {
@@ -187,7 +187,7 @@
 }
 
 .details-name a:hover {
-  color: var(--primary);
+  color: #df9e41
 }
 
 .details-meta {
@@ -219,7 +219,7 @@
 
 .details-meta a:hover {
   text-decoration: underline;
-  color: var(--primary);
+  color: #df9e41
 }
 
 .details-rating {
@@ -254,7 +254,7 @@
 }
 
 .details-rating a:hover {
-  color: var(--primary);
+  color: #df9e41
   text-decoration: underline;
 }
 
@@ -272,7 +272,7 @@
 }
 
 .details-price span {
-  color: var(--primary);
+  color: #df9e41
   white-space: nowrap;
 }
 
@@ -347,7 +347,7 @@
 
 .details-tag-list li a:hover {
   color: var(--white);
-  background: var(--primary);
+  background: #df9e41
 }
 
 .details-share-list {
@@ -384,20 +384,19 @@
 
 .details-share-list li a:hover {
   color: var(--white);
-  background: var(--primary);
+  background: #df9e41
 }
 
 .details-add-group {
   margin: 45px 0px 15px;
 }
 
-.details-add-group .product-add,
-.details-add-group .action-input {
-  padding: 10px 0px;
-  color: var(--white);
-  background: var(--primary);
-  text-transform: uppercase;
-}
+    .details-add-group .product-add,
+    .details-add-group .action-input {
+        padding: 10px 0px;
+        color: var(--white);
+        background: #df9e41 !important;
+    }
 
 .details-add-group .action-minus i,
 .details-add-group .action-plus i {
@@ -435,7 +434,7 @@
 }
 
 .details-action-group a:hover {
-  color: var(--primary);
+  color: #df9e41
 }
 
 .details-action-group a i {
@@ -452,12 +451,12 @@
 
 .details-wish.active {
   color: var(--white);
-  background: var(--primary);
+  background: #df9e41
 }
 
 .details-wish.active:hover {
   color: var(--white);
-  background: var(--primary);
+  background: #df9e41
 }
 
 .product-details-frame {
@@ -565,7 +564,7 @@
 .review-avatar {
   margin-right: 15px;
   border-radius: 50%;
-  border: 2px solid var(--primary);
+  border: 2px solid #df9e41
 }
 
 .review-avatar img {
@@ -589,7 +588,7 @@
 }
 
 .review-meta a:hover {
-  color: var(--primary);
+  color: #df9e41
 }
 
 .review-meta span {
@@ -601,7 +600,7 @@
 
 .review-meta span b {
   font-weight: 500;
-  color: var(--primary);
+  color: #df9e41
 }
 
 .review-rating {
@@ -644,7 +643,7 @@
   padding: 6px 15px;
   border-radius: 6px;
   color: var(--white);
-  background: var(--primary);
+  background: #df9e41
   text-transform: capitalize;
   transition: all linear .3s;
   -webkit-transition: all linear .3s;
