@@ -2741,7 +2741,7 @@ tbody tr {
 
         .product-add i,
         .standard-wish i {
-            display: none;
+         /*   display: none;*/
         }
 
     .standard-action input {
@@ -2784,7 +2784,7 @@ tbody tr {
 
         .product-add i,
         .standard-wish i {
-            display: none;
+         /*   display: none;*/
         }
 
     .standard-action input {
@@ -7625,6 +7625,7 @@ img {
     }
 }
 
+.modal{z-index:999999 !important;}
 
 
 /*END*/
