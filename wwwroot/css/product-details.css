@@ -396,6 +396,7 @@
         padding: 10px 0px;
         color: var(--white);
         background: #df9e41 !important;
+        cursor:pointer;
     }
 
 .details-add-group .action-minus i,
