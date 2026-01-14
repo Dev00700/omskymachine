@@ -47,12 +47,28 @@ namespace MachineWeb.Controllers
 
             var categoryres = await homeService.GetCategoryHomeData(_categoryrequestDto);
 
+            CommonRequestDto<HomeRequestDto> _blogRequestDto = new CommonRequestDto<HomeRequestDto>
+            {
+                CompanyId = 1,
+                UserId = 1,
+                PageSize = 1,
+                PageRecordCount = 100,
+                Data = new HomeRequestDto
+                {
+                    ProcId = 4
+                }
+            };
+
+            var blogres = await homeService.GetBlogHomeData(_blogRequestDto);
+
             if (res.Data.Count() > 0)
             {
                 res.Data.Where(x => !string.IsNullOrEmpty(x.ProductImage)).ToList().ForEach(x => x.ProductImage = "webimages/" + x.ProductImage);
                 categoryres.Data.Where(x => !string.IsNullOrEmpty(x.CategoryImage)).ToList().ForEach(x => x.CategoryImage = "webimages/" + x.CategoryImage);
+                blogres.Data.Where(x => !string.IsNullOrEmpty(x.Image)).ToList().ForEach(x => x.Image = "webimages/" + x.Image);
                 homeresponse.productDataResponses = res.Data;
                 homeresponse.categoryDataResponses = categoryres.Data;
+                homeresponse.blogDataResponses = blogres.Data;
                 return View(homeresponse);
             }
             return View(new HomeDto());

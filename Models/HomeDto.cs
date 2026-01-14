@@ -8,6 +8,7 @@
     {
         public List<ProductDataResponse> productDataResponses { get;set; }
         public List<CategoryDataResponse> categoryDataResponses { get;set; }
+        public List<BlogDataResponse> blogDataResponses { get;set; }
     }
     public class ProductDataResponse
     {
@@ -22,6 +23,17 @@
         public string CategoryName { get; set; }
         public string CategoryImage { get; set; }
     }
+
+    public class BlogDataResponse
+    {
+        public Guid BlogGuid { get; set; }
+        public string Title { get; set; }
+        public string Link { get; set; }
+        public string Description { get; set; }
+        public string Image { get; set; }
+    }
+
+
     public  class ProductDetailRequestDto
     {
         public int ProcId { get; set; }

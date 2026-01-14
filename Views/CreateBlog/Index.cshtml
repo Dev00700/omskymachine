@@ -1,0 +1,117 @@
+﻿@model MachineWeb.Models.BlogResponseDto
+@{
+    Layout = "_AdminLayout";
+}
+
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Add Blog Article</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">blog Add</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">General</h3>
+
+
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="txttitle">Title</label>
+                            <input type="text" id="txttitle" class="form-control" value="@Model.Title">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtdesc">Description</label>
+                            <textarea type="text" id="txtdesc" class="form-control" >@Model.Description</textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="txtlink">Link</label>
+                            <input type="text" id="txtlink" class="form-control" value="@Model.Link"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txtfile"> Image</label>
+                            <input type="file" id="txtfile" class="form-control" />
+                        </div>
+
+                        @if (Model.BlogId == 0)
+                        {
+                            <div class="form-group">
+                                <label for="chkisactive">Active</label>
+                                <div class="icheck-primary d-inline">
+                                    <input type="checkbox" id="chkisactive" checked disabled />
+
+                                </div>
+                            </div>
+                        }
+                        else if (Model.BlogId > 0)
+                        {
+
+                            <div class="form-group">
+                                <label for="chkisactive">Active</label>
+                                <div class="icheck-primary d-inline">
+                                    @if (Model.IsActive)
+                                    {
+                                        <input type="checkbox" id="chkisactive" checked />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" id="chkisactive" />
+                                    }
+
+                                </div>
+                            </div>
+
+                        }
+
+
+                        @if (Model.Image != null)
+                        {
+                            <img src="@Model.Image" height="100" />
+                        }
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="/Blog" class="btn btn-secondary">Cancel</a>
+                @if (Model.BlogId > 0)
+                {
+                    <input type="hidden" id="txthiddenguid" value="@Model.BlogGuid" />
+                    <input type="submit" value="Update" class="btn btn-success" onclick="AddBlog()">
+                }
+                else
+                {
+                    <input type="submit" value="Submit" class="btn btn-success" onclick="AddBlog()">
+                }
+            </div>
+
+        </div>
+    </section>
+    <!-- /.content -->
+</div>
+<script src="~/js/blog.js?var= @DateTime.Now"></script>

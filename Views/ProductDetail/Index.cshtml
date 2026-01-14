@@ -51,7 +51,8 @@
                     <h3 class="details-name"><a href="#">@Model.ProductName</a></h3>
                     <p class="details-desc">@Model.ShortDescription</p>
                     <div class="details-add-group">
-                        <a class="product-add" title="Send Enquiry" href="/Home/Contact">
+                        <a class="product-add" title="Send Enquiry" data-bs-toggle="modal"
+                           data-bs-target="#product-view">
                                     <span>Send Enquiry</span>
                                 </a>
                     </div>
@@ -71,6 +72,14 @@
         @Html.Raw(Model.Description)
     </div>
 </section>
+
+
+
+
+
+
+
+
 <!--=====================================
             PRODUCT TAB PART END
 =======================================-->

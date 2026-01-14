@@ -45,5 +45,19 @@ namespace MachineWeb.BAL
             response.Message = "Success";
             return response;
         }
+
+        public async Task<CommonResponseDto<List<BlogDataResponse>>> GetBlogHomeData(CommonRequestDto<HomeRequestDto> commonRequest)
+        {
+            var response = new CommonResponseDto<List<BlogDataResponse>>();
+            string _proc = "Proc_GetHomeData";
+            var queryparameter = new DynamicParameters();
+            queryparameter.Add("@ProcedureId", commonRequest.Data.ProcId);
+            var res = await DBHelperDapper.GetResponseModelList<BlogDataResponse>(_proc, queryparameter);
+            response.Data = res;
+            response.Flag = 1;
+            response.Message = "Success";
+            return response;
+        }
+
     }
 }
