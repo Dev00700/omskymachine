@@ -14,7 +14,7 @@
 }
 
 .banner-part {
-  padding: 50px 0px 60px;
+ /* padding: 50px 0px 60px;*/
   margin-bottom: 25px;
   position: relative;
   z-index: 1;
@@ -186,7 +186,7 @@
 
 .blog-slider .dandik,
 .blog-slider .bamdik {
-  top: 43%;
+  top: 29%;
 }
 
 @media (max-width: 767px) {
