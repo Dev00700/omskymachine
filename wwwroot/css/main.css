@@ -7700,13 +7700,13 @@ img {
 
 /*BANNER CSS*/
 .banner-part img {
-    height: 100%;
-    width: 100%;
+   /* height: 100%;
+    width: 100%;*/
    
 }
 .banner-part {
-    height: 585px;
-    background-size: cover !important;
+   /* height: 585px;
+    background-size: cover !important;*/
 }
 
 @media (max-width: 1200px) {
