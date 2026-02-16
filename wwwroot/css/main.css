@@ -7129,7 +7129,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+  /*  height: 90px;*/
 }
 
 /* Left */
@@ -7769,7 +7769,7 @@ img {
 @media (max-width: 480px) {
     .banner-part img {
         width: 100%;
-        height: auto;
+      /*  height: auto;*/
         max-height: 100%;
         object-fit: cover;
     }
